@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TopBanner :appTitle="appTitle"
+              :loginDone="loginDone"
+              @titleClicked="goToHome"
+              @startFree="goToLogin"
+              @explainClicked="goToExplain"
+              @logOut="loginDone = false"/>
+  <RouterView @startFree="goToLogin"
+              @login="loginDone = true"></RouterView>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+import TopBanner from './components/TopBanner.vue'
+  
+  export default {
+    components: {
+      TopBanner
+    },
+    data() {
+      return {
+        appTitle: 'TryWrite',
+        loginDone: false
+      }
+    },
+    methods: {
+      goToHome() {
+        this.$router.push('/')
+      },
+      goToLogin() {
+        alert('로그인 페이지로 이동합니다.')
+        this.$router.push('/login')
+      },
+      goToExplain() {
+        alert('어디로 가야하오')
+      }
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
