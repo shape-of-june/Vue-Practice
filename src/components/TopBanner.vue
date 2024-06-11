@@ -1,19 +1,14 @@
 <template>
   <div id="banner">
-    <div class="button" style="background-color: #808080" @click="$emit('titleClicked')">
-      <h3>{{ appTitle }}</h3>
+    <div class="button" id="trywrite" @click="handleTitleClick">
+      <h3>TryWrite</h3>
     </div>
-    <div class="right-group" v-if=!loginDone>
-      <div class="button" style="background-color: white" @click="$emit('explainClicked')">
+    <div class="right-group">
+      <div class="button" @click="handleExplainClick">
         <h5>서비스 소개</h5>
       </div>
-      <StartFree @startFree="$emit('startFree')"/>
-    </div>
-    <div class="right-group" v-else>
-      <div class="button" style="background-color: white" @click="$emit('explainClicked')">
-        <h5>환영합니다</h5>
-      </div>
-      <button @click="$emit('logOut')">로그아웃</button>
+      <StartFree v-if=!$store.state.isLoggedIn />
+      <button v-else @click="handleLogOut">로그아웃</button>
     </div>
   </div>
   <hr>
@@ -23,10 +18,20 @@
 import StartFree from './StartFree.vue'
 
   export default {
-    props: ['appTitle', 'loginDone'],
-    emits: ['titleClicked', 'explainClicked', 'startFree', 'logOut'],
     components: {
       StartFree,
+    },
+    methods: {
+      handleTitleClick() {
+        this.$router.push('/')
+      },
+      handleExplainClick() {
+        this.$router.push('/explain')
+      },
+      handleLogOut() {
+        this.$store.commit('logOut')
+        this.$router.push('/')
+      },
     },
   }
 </script>
@@ -54,6 +59,10 @@ import StartFree from './StartFree.vue'
 
 h3, h5 {
   margin: 0; /* Remove default margin */
+}
+
+#trywrite {
+  background-color: gray;
 }
 
 </style>

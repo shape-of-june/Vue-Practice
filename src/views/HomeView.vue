@@ -1,19 +1,19 @@
 <template>
-  <MainBanner @startFree="$emit('startFree')" :bannerTitle="bannerTitle1"/>
-  <ServiceExplain :bannerTitle="bannerTitle2"/>
-  <ServiceExplain :bannerTitle="bannerTitle3"/>
-  <ServiceExplain :bannerTitle="bannerTitle4"/>
-  <MainBanner @startFree="$emit('startFree')" :bannerTitle="bannerTitle5"/>
+  <StartBanner :bannerTitle="bannerTitle1"/>
+  <FunctionBanner :bannerTitle="bannerTitle2"/>
+  <FunctionBanner :bannerTitle="bannerTitle3"/>
+  <FunctionBanner :bannerTitle="bannerTitle4"/>
+  <StartBanner :bannerTitle="bannerTitle5"/>
 </template>
 
 <script>
-import MainBanner from '../components/MainBanner.vue'
-import ServiceExplain from '../components/ServiceExplain.vue'
+import StartBanner from '@/components/StartBanner.vue'
+import FunctionBanner from '@/components/FunctionBanner.vue'
   
   export default {
     components: {
-      MainBanner,
-      ServiceExplain
+      StartBanner,
+      FunctionBanner
     },
     data() {
       return {

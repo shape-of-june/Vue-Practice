@@ -3,16 +3,15 @@
     <div class="box" >
       <h4>{{ bannerTitle }}</h4>
     </div>
-    <StartFree @startFree="$emit('startFree')"/>
+    <StartFree/>
   </div>
   <hr>
 </template>
 
 <script>
-import StartFree from './StartFree.vue'
+import StartFree from '@/components/StartFree.vue'
 
   export default {
-    emits: ['startFree'],
     components: {
       StartFree
     },

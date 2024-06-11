@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="box blue" @click="$emit('startFree')">
+    <div class="box blue" @click="handleStart">
       <h5 style="color: white">무료로 시작하기</h5>
     </div>
   </div>
@@ -8,7 +8,15 @@
 
 <script>
   export default {
-    emits: ['startFree'],
+    methods: {
+      handleStart() {
+        if (this.$store.state.isLoggedIn) {
+          this.$router.push('/book')
+        } else {
+          this.$router.push('/login')
+        }
+      },
+    }
   }
 </script>
 

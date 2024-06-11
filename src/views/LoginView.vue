@@ -17,12 +17,10 @@
 
 <script>
   export default {
-    emits: ['login'],
     methods: {
       submitForm() {
-        alert('로그인 성공')
-        this.$emit('login')
-        this.$router.push('/')
+        this.$store.commit('logIn')
+        this.$router.push('/book')
       }
     }
   }
