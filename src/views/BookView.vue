@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import LeftBar from '@/components/BookLeftBar.vue'
-import BookShelf from '@/components/BookShelf.vue'
+import LeftBar from '@/components/Book/BookLeftBar.vue'
+import BookShelf from '@/components/Book/BookShelf.vue'
 
   export default {
     components: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>추천 기능!</h1>
+
   </div>
 </template>
 

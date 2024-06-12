@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import StartFree from './StartFree.vue'
+import StartFree from '@/components/StartFree.vue'
 
   export default {
     components: {

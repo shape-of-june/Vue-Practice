@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import StartBanner from '@/components/StartBanner.vue'
-import FunctionBanner from '@/components/FunctionBanner.vue'
+import StartBanner from '@/components/Home/StartBanner.vue'
+import FunctionBanner from '@/components/Home/FunctionBanner.vue'
   
   export default {
     components: {

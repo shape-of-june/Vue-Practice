@@ -25,7 +25,7 @@
     },
     methods: {
       handleRecommend() {
-        this.$router.push('/recommend')
+        this.$router.push('/recommend1')
       },
       handleNoRecommend() {
         this.doRecommend = false;

@@ -1,18 +1,21 @@
 <template>
   <div class="horizontal">
-    <EditorLeftBar/>
-    <EditorComponent/>
+    <EditorLeft/>
+    <EditorCenter/>
+    <EditorRight/>
   </div>
 </template>
 
 <script>
-import EditorLeftBar from '@/components/EditorLeftBar.vue'
-import EditorComponent from '@/components/EditorComponent.vue';
+import EditorLeft from '@/components/Editor/EditorLeft.vue'
+import EditorCenter from '@/components/Editor/EditorCenter.vue'
+import EditorRight from '@/components/Editor/EditorRight.vue'
 
   export default {
     components: {
-      EditorLeftBar,
-      EditorComponent
+      EditorLeft,
+      EditorCenter,
+      EditorRight,
     },
   }
 </script>
