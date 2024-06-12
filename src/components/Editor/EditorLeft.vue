@@ -1,13 +1,15 @@
 <template>
   <div class="sidebar">
-    <!-- <hr>
-    <div class="sidebar-item">
-      <h3>제목없음</h3>
+    <div v-if="$store.state.answer3List.every(writing => writing == '')">
+      <hr>
+      <div class="sidebar-item">
+        <h3>제목없음</h3>
+      </div>
+      <div class="sidebar-item">
+        <h3>+ 목차추가</h3>
+      </div>
     </div>
-    <div class="sidebar-item">
-      <h3>+ 목차추가</h3>
-    </div> -->
-    <div v-if="$store.state.answer3List">
+    <div v-else>
       <div v-for="(outerQ, outerIndex) in $store.state.answer3List" :key="outerIndex">
           <div v-if="outerQ!='' && outerQ !='-1'">
             <RecommendBox :question="$store.state.answer3List[outerIndex]"

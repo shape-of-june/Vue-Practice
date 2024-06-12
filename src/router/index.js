@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -10,8 +10,6 @@ import Recommend3View from '@/views/Recommend3View.vue'
 import Recommend4View from '@/views/Recommend4View.vue'
 import Recommend5View from '@/views/Recommend5View.vue'
 import ExplainView from '@/views/ExplainView.vue'
-
-
 
 const routes = [
   { 
@@ -68,7 +66,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })
 
