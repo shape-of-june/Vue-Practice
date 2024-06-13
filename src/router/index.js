@@ -4,11 +4,10 @@ import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import BookView from '@/views/BookView.vue'
 import EditorView from '@/views/EditorView.vue'
-import Recommend1View from '@/views/Recommend1View.vue'
-import Recommend2View from '@/views/Recommend2View.vue'
-import Recommend3View from '@/views/Recommend3View.vue'
-import Recommend4View from '@/views/Recommend4View.vue'
-import Recommend5View from '@/views/Recommend5View.vue'
+import RecommendView1 from '@/views/RecommendView1.vue'
+import RecommendView2 from '@/views/RecommendView2.vue'
+import RecommendView3 from '@/views/RecommendView3.vue'
+import RecommendView4 from '@/views/RecommendView4.vue'
 import ExplainView from '@/views/ExplainView.vue'
 
 const routes = [
@@ -35,29 +34,23 @@ const routes = [
   { 
     path: '/recommend1', 
     name: 'recommend1',
-    component: Recommend1View,
+    component: RecommendView1,
   },
   { 
     path: '/recommend2', 
     name: 'recommend2',
-    component: Recommend2View,
+    component: RecommendView2,
   },
   { 
     path: '/recommend3', 
     name: 'recommend3',
-    component: Recommend3View,
+    component: RecommendView3,
   },
   { 
     path: '/recommend4', 
     name: 'recommend4',
-    component: Recommend4View,
+    component: RecommendView4,
   },
-  { 
-    path: '/recommend5', 
-    name: 'recommend5',
-    component: Recommend5View,
-  },
-
   {
     path: '/explain',
     name: 'explain',

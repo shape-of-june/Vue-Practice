@@ -1,39 +1,37 @@
 <template>
   <div>
-    <CloseButton/>
+    <!-- <CloseButton/> -->
     <QuestionBox @submit="handleSubmit" :question="question" :enter="true" :regen="false" :notUse="false"/>
     <ButtonList :buttonList="buttonList" @buttonClicked="handleSubmit"/>
-    <BackButton/>
+    <!-- <BackButton/> -->
   </div>
 </template>
 
 <script>
-import CloseButton from '@/components/CloseButton.vue'
+// import CloseButton from '@/components/CloseButton.vue'
 import QuestionBox from '@/components/Recommend/QuestionBox.vue'
 import ButtonList from '@/components/Recommend/ButtonList.vue'
-import BackButton from '@/components/BackButton.vue'
+// import BackButton from '@/components/BackButton.vue'
 
 
   export default {
     data() {
       return {
-        question: '이야기 하고 싶은 분야를 알려주세요! 3번의 단계만 거치면 글감을 찾을 수 있어요!',
-        buttonList: [
-          '여행', '사진', '영화', '책', '글쓰기',
-          '음악', '요리', '육아', '스타트업', '건강',
-          '운동', '멘탈', '인문학', '사랑', '인생',
-        ],
+        question: this.$store.state.question1,
+        buttonList: this.$store.state.buttonList
       }
     },
     components: {
-      CloseButton,
+      // CloseButton,
       QuestionBox,
       ButtonList,
-      BackButton
+      // BackButton
     },
     methods: {
       handleSubmit(answer) {
         this.$store.state.answer1 = answer
+        // 첫번째 질문에 대한 답변 생성 API 호출후 답변을 아래 변수에 저장
+        this.$store.state.question2 = answer + '중 어떤 장르를 가장 좋아하시나요?'
         this.$router.push('/recommend2')
       }
     }

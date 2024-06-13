@@ -12,6 +12,7 @@ import FunctionBanner from '@/components/Home/FunctionBanner.vue'
   
   export default {
     components: {
+      // 현재는 배너를 이렇게 나눴지만, 실제 디자인에 따라 컴포넌트를 더 나눠서 사용할 수도 있음
       StartBanner,
       FunctionBanner
     },

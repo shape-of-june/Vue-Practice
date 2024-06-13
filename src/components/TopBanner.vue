@@ -23,14 +23,33 @@ import StartFree from '@/components/StartFree.vue'
     },
     methods: {
       handleTitleClick() {
-        this.$router.push('/')
+        // 같은 창에서 누를 시 새로 고침이 되도록 함
+        if (this.$route.path === '/') {
+          // 현재는 리로드하면 로그인 정보가 삭제됨
+          // JWT을 로컬 스토리지나 쿠키에 저장하여 새로 고침 이후에도 로그인 상태 유지할 수 있도록 해야 함
+          window.location.reload()
+        }
+        else {
+          // 다른 창에서 누를 시 홈으로 이동
+          this.$router.push('/')
+        }
       },
       handleExplainClick() {
-        this.$router.push('/explain')
+        if (this.$route.path === '/explain') {
+          window.location.reload()
+        }
+        else {
+          this.$router.push('/explain')
+        }
       },
       handleLogOut() {
         this.$store.commit('logOut')
-        this.$router.push('/')
+        if (this.$route.path === '/') {
+          window.location.reload()
+        }
+        else {
+          this.$router.push('/')
+        }
       },
     },
   }

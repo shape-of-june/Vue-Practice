@@ -40,5 +40,4 @@ import StartFree from '@/components/StartFree.vue'
 h4 {
   margin: 0; /* Remove default margin */
 }
-
 </style>

@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="">
     <h1>서비스 소개</h1>
-    <h3>구현중입니다.</h3>
+    <h3>디자이너 해줘</h3>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+  
+}
 </script>
 
 <style scoped>

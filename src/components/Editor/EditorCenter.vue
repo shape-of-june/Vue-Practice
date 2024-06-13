@@ -1,41 +1,40 @@
 <template>
   <div class="editor">
-    <div v-if="bookName!=''">
-      <h1>{{ bookName }}</h1>
-    </div>
-    <div v-else>
-      <h3>제목 정하기...</h3>
-      <div v-if="doRecommend">
+    <div>
+      <div v-if="bookName==''">
         <button @click="handleRecommend">글감 찾기</button>
         <button @click="handleNoRecommend">혼자 시작하기</button>
       </div>
     </div>
+    <EditorComponent/>
     <RevisionButton/>
   </div>
 </template>
 
 <script>
-import RevisionButton from '../RevisionButton.vue'
+import RevisionButton from '@/components/RevisionButton.vue'
+import EditorComponent from '@/components/Editor/EditorComponent.vue'
 
-  export default {
-    data() {
-      return {
-        bookName: this.$store.state.bookName,
-        doRecommend: true,
-      }
-    },
-    methods: {
-      handleRecommend() {
-        this.$router.push('/recommend1')
-      },
-      handleNoRecommend() {
-        this.doRecommend = false;
-      }
-    },
-    components: {
-      RevisionButton
+export default {
+  data() {
+    return {
+      bookName: this.$store.state.bookName,
+      doRecommend: true,
     }
+  },
+  methods: {
+    handleRecommend() {
+      this.$router.push('/recommend1')
+    },
+    handleNoRecommend() {
+      this.doRecommend = false;
+    },
+  },
+  components: {
+    RevisionButton,
+    EditorComponent
   }
+}
 </script>
 
 <style scoped>
@@ -47,5 +46,4 @@ import RevisionButton from '../RevisionButton.vue'
 h3 {
   color: gray;
 }
-
 </style>

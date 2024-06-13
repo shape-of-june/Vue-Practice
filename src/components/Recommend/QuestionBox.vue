@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'display-none':!use | question==''}">
+  <div>
     <div class="box">
       <div>    
         <h3>{{ question }}</h3>
@@ -9,8 +9,7 @@
           <input v-if="enter" v-model="answer" type="text" placeholder="입력하기">
           <button v-if="enter" type="submit">제출</button>
         </form>
-        <button v-if="regen" @click="handleRegen">재생성</button>
-        <button v-if="notUse" @click="handleDelete">X</button>
+        <button v-if="regen" @click="$emit('handleRegen')">재생성</button>
       </div>
     </div>
   </div>
@@ -18,8 +17,8 @@
 
 <script>
   export default {
-    props: ['question', 'enter', 'regen', 'notUse'],
-    emits: ['submit', 'handleRegen', 'handleDelete'],
+    props: ['question', 'enter', 'regen'],
+    emits: ['submit', 'handleRegen'],
     data() {
       return {
         answer: '',
@@ -31,14 +30,6 @@
         this.$emit('submit', this.answer)
         this.answer = ''
       },
-      handleRegen() {
-        alert('리젠 기능 구현중입니다.')
-        this.$emit('handleRegen')
-      },
-      handleDelete() {
-        this.use = false
-        this.$emit('handleDelete')
-      }
     }
   }
 </script>
@@ -53,9 +44,5 @@
 .submit-form {
   display: flex;
   justify-content: space-between;
-}
-
-.display-none {
-  display: none;
 }
 </style>
