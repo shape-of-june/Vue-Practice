@@ -59,7 +59,12 @@ const store = createStore({
     createNewBook (state) {
       state.bookName = ''
     },
-
+    setBook(state){
+      // 현재 선정한 글감을 정리해 넣는 함수
+      // 아직 데이터를 어떻게 관리해야될 지 정하지 않아서 보류
+      // { answer2 = 책 제목, (question3List, answer3List) = 대목차, writeAbles = 소목차 }
+      state.bookName = state.answer2
+    }
   },
 })
 

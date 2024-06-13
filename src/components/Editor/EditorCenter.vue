@@ -10,12 +10,13 @@
         <button @click="handleNoRecommend">혼자 시작하기</button>
       </div>
     </div>
-
-
+    <RevisionButton/>
   </div>
 </template>
 
 <script>
+import RevisionButton from '../RevisionButton.vue'
+
   export default {
     data() {
       return {
@@ -31,6 +32,9 @@
         this.doRecommend = false;
       }
     },
+    components: {
+      RevisionButton
+    }
   }
 </script>
 

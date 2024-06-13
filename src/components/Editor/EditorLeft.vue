@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 125px; /* adjust the width as needed */
+  width: 250px; /* adjust the width as needed */
   background-color: #f2f2f2; /* set your desired background color */
   height: 100vh;
 }
@@ -49,7 +49,7 @@ export default {
 
 .sidebar-item h3 {
   margin: 0;
-  font-size: 18px; /* adjust the font size as needed */
+  font-size: 12px; /* adjust the font size as needed */
   color: #333; /* set your desired text color */
   cursor: pointer; /* optional: add cursor pointer */
 }

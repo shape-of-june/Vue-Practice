@@ -36,6 +36,7 @@ import FinishButton from '@/components/FinishButton.vue'
   export default {
     methods: {
       handleFinish() {
+        this.$store.commit('setBook')
         this.$router.push('/editor')
       },
       handleDeleteOuter(outerIndex) {
