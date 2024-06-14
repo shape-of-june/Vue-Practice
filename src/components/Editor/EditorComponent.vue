@@ -37,7 +37,7 @@ export default {
           {
             type: 'paragraph',
             data: {
-              text: this.$store.state.bookName==''?'':this.$store.state.writeAbles[0][0],
+              text: this.$store.state.bookName==''?'':this.$store.state.writeAbles[0],
             },
           },
         ],
